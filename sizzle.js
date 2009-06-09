@@ -948,7 +948,8 @@ var contains = document.compareDocumentPosition ?  function(a, b){
 
 var isXML = function(elem){
 	return elem.nodeType === 9 && elem.documentElement.nodeName !== "HTML" ||
-		!!elem.ownerDocument && elem.ownerDocument.documentElement.nodeName !== "HTML";
+		!!elem.ownerDocument && elem.ownerDocument.documentElement.nodeName !== "HTML" ||
+		elem.namespaceURI !== null;
 };
 
 var posProcess = function(selector, context){
